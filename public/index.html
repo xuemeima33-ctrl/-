@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#edf1eb" />
+    <title>晴间 · 城市天气</title>
+    <link rel="stylesheet" href="/style.css" />
+    <script type="module" src="/app.js"></script>
+  </head>
+  <body>
+    <div class="shell">
+      <header>
+        <a class="brand" href="/" aria-label="晴间首页"
+          ><span class="sun" aria-hidden="true">☀</span> 晴间<span
+            class="brand-sub"
+            >CITY WEATHER</span
+          ></a
+        ><span class="header-note">每一天，心中有数</span>
+      </header>
+      <main>
+        <section class="intro">
+          <p class="eyebrow">YOUR CITY, YOUR FORECAST</p>
+          <h1>看看城市的<span>天气表情。</span></h1>
+          <p class="intro-note">此刻的温度，和接下来五天的打算。</p>
+        </section>
+        <section class="search-panel" aria-label="搜索城市">
+          <form id="search-form" novalidate>
+            <label for="query">你想了解哪座城市？</label>
+            <div class="search-row">
+              <input
+                id="query"
+                name="q"
+                type="search"
+                placeholder="输入城市名称，如 北京 / London"
+                autocomplete="off"
+                aria-describedby="search-status"
+              /><button id="search-button" type="submit">
+                搜索城市 <span aria-hidden="true">↗</span>
+              </button>
+            </div>
+          </form>
+          <p id="search-status" class="status" role="status" aria-live="polite">
+            输入城市名称，搜索后选择对应城市。
+          </p>
+          <div id="candidates" class="candidates"></div>
+        </section>
+        <section id="weather" hidden aria-label="天气结果">
+          <div class="city-heading">
+            <div>
+              <p class="eyebrow">THE WEATHER IN</p>
+              <h2 id="city-label"></h2>
+              <p id="city-zone" class="muted"></p>
+            </div>
+            <button id="refresh" type="button" class="secondary">
+              刷新天气 ↻
+            </button>
+          </div>
+          <p
+            id="weather-status"
+            class="status"
+            role="status"
+            aria-live="polite"
+          ></p>
+          <p id="demo-notice" class="notice" hidden>
+            演示数据 · 以下为合成天气，并非实时天气。
+          </p>
+          <div id="current"></div>
+          <div id="forecast"></div>
+        </section>
+        <section id="welcome" class="welcome">
+          <span aria-hidden="true" class="welcome-symbol">☁</span>
+          <div>
+            <h2>从一座城市开始</h2>
+            <p>选择城市后，这里会展示当前天气与当地明日起的 5 日预报。</p>
+          </div>
+          <span class="welcome-detail">°C · m/s · %</span>
+        </section>
+      </main>
+      <footer>
+        <span>晴间 · 给每一天一点准备</span
+        ><span
+          >天气数据
+          <a
+            href="https://open-meteo.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Open-Meteo</a
+          >
+          · 地名 GeoNames <span id="demo-label"></span
+        ></span>
+      </footer>
+    </div>
+  </body>
+</html>

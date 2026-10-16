@@ -1,0 +1,19 @@
+{
+  "name": "city-weather",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22.11"
+  },
+  "scripts": {
+    "start": "node --experimental-sqlite src/server.js",
+    "test": "node --experimental-sqlite --test test/*.test.js",
+    "check": "node --check src/server.js && node --check src/weather.js && node --check src/security.js && node --check public/app.js && node --check public/state.js && prettier --check src public test playwright.config.js package.json README.md",
+    "test:browser": "playwright test"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.64.1",
+    "prettier": "^3.9.10"
+  }
+}
