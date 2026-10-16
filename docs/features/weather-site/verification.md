@@ -34,3 +34,7 @@ DEMO_MODE=1 npm start
 ```
 
 真实模式使用 `.env.example` 填入服务端配置，再运行 `node --env-file=.env --experimental-sqlite src/server.js`。演示模式不调用上游，真实模式缺安全配置则拒绝启动。
+
+## 远端并行改动整合
+
+首次推送发现远端新增 `4d9719eecb0497feda42bc44fb83dc939e925fd8`（Python/WeatherAPI）。已保留其代码与历史并合并；根 README 默认说明 Node/Open-Meteo，Python 使用独立的 `weatherapi.env.example` 和 weatherapi-backend.md，避免混用供应商凭据。合并后运行 `python3 -B -m unittest discover -s tests -v`：26/26 通过；Node 27/27 与语法/格式检查再次通过。原有 Python 浏览器脚本未额外执行，本次 Node 的 9 项 Chrome 浏览器测试成绩见上文。

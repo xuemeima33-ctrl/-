@@ -74,3 +74,7 @@ node --experimental-sqlite --experimental-test-coverage --test test/*.test.js
 浏览器测试默认使用已安装的 Google Chrome；无 Chrome 环境先安装 Playwright Chromium 并在 `playwright.config.js` 移除 channel，或用自有 CI 浏览器配置。测试服务为合成数据，不消耗第三方额度。测试范围、实际成绩及尚未验证的发布条件见 [verification.md](docs/features/weather-site/verification.md)。
 
 仓库中的 user-research.md 缺失；已依据实际存在的 PRD v1.1 和 prd-review.md 实现，未伪造上游研究材料，未改动 PRD。
+
+## 已有 Python/WeatherAPI 实现
+
+合并远端并行提交时保留了 `server.py`、`weather.py`、`static/`、`tests/`。默认 `npm start` 运行本文的 Node/Open-Meteo 网站；如需运行已有 Python/WeatherAPI 版本，参见 [独立运行说明](docs/features/weather-site/weatherapi-backend.md)，其示例配置为 `weatherapi.env.example`。两者提供相同 API 路径，须分开监听端口；供应商密钥和环境文件不得混用。

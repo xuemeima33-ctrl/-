@@ -1,0 +1,9 @@
+<!doctype html>
+<html lang="zh-CN">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="light"><title>知晴 · 城市天气</title><link rel="stylesheet" href="/style.css"><script defer src="/app.js"></script></head>
+<body><main><header><a class="brand" href="/">◉ 知晴 <span>WEATHER, SIMPLY.</span></a><span class="eyebrow">为下一段旅程，先看看天气</span></header>
+<section class="intro"><p class="eyebrow">每一座城，都有自己的晴雨</p><h1>此刻天气，<br>未来五日。</h1><p>选一座城市，看看当下，也为明天做好准备。</p></section>
+<section class="search-panel" aria-label="搜索城市"><form id="search-form"><label for="query">你想了解哪座城市？</label><div class="search-row"><input id="query" name="q" type="search" placeholder="输入城市名称，如：北京、London" autocomplete="off" required><button id="search-submit" type="submit">搜索城市 <span aria-hidden="true">↗</span></button></div></form><p id="search-status" role="status" aria-live="polite">输入城市名称，从候选列表中确认地点。</p><ul id="candidates" aria-label="城市候选"></ul></section>
+<section id="weather" hidden aria-label="城市天气"><div class="city-heading"><div><p class="eyebrow">你选择的目的地</p><h2 id="city-label"></h2></div><button id="refresh" type="button">刷新天气 ↻</button></div><p id="weather-status" role="status" aria-live="polite"></p><p id="pause-notice" role="status"></p><div id="current" class="panel"></div><div id="forecast" class="panel"></div></section>
+<section id="welcome" class="welcome"><span aria-hidden="true">☀</span><div><h2>从一座城市开始</h2><p>当前温度、体感、湿度与风速，以及目的地当地明日起的五日预报。</p></div></section>
+<footer><span>温度 °C · 风速 m/s · 城市当地时间</span><a href="https://www.weatherapi.com/" rel="noreferrer">天气数据：WeatherAPI.com</a></footer></main></body></html>

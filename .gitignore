@@ -7,3 +7,10 @@ node_modules/
 *.sqlite-wal
 coverage/
 test-results/
+
+# Preserved Python/WeatherAPI implementation
+__pycache__/
+*.py[cod]
+.coverage
+htmlcov/
+.DS_Store
